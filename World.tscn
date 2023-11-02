@@ -20,7 +20,6 @@ func _process(delta):
 	
 func _physics_process(delta):		
 	var input_vector = Vector2.ZERO;
-	
 	input_vector.x = Input.get_action_strength(\"ui_right\") - Input.get_action_strength(\"ui_left\");
 	input_vector.y = Input.get_action_strength(\"ui_down\") - Input.get_action_strength(\"ui_up\");
 	input_vector = input_vector.normalized();
@@ -31,7 +30,7 @@ func _physics_process(delta):
 	else:
 		velocity= velocity.move_toward(Vector2.ZERO, FRICTION* delta);
 	
-	move_and_collide(velocity* delta);
+	move_and_slide();
 		
 
 "
@@ -59,3 +58,8 @@ hframes = 62
 position = Vector2(96, 80)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_0egpk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 64, 0, 40, 24, 32, 72, 24, 160, 88, 136, 136, 160, 176, 160, 216, 144, 248, 128, 288, 160, 308.533, 77.8682, 320, 32, 320, 192, 0, 192)
