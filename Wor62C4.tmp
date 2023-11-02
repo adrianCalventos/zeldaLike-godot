@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkwv7rak68ypm"]
+
+[ext_resource type="Texture2D" uid="uid://ctke6n7it6fw" path="res://World/Bush.png" id="1_6mds5"]
+[ext_resource type="Texture2D" uid="uid://llrpiolwgyty" path="res://Player/Player.png" id="2_p1k3h"]
+
+[sub_resource type="GDScript" id="GDScript_ndqgj"]
+script/source = "extends CharacterBody2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass;
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+func _physics_process(delta):
+	if Input.is_action_just_pressed(\"ui_right\"):
+		velocity.x+=10;
+	if Input.is_action_just_pressed(\"ui_LEFT\"):
+		velocity.x-=10;
+"
+
+[node name="World" type="Node2D"]
+
+[node name="Bush" type="Sprite2D" parent="."]
+position = Vector2(29, 36)
+texture = ExtResource("1_6mds5")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = SubResource("GDScript_ndqgj")
+metadata/_edit_group_ = true
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+position = Vector2(95, 71)
+texture = ExtResource("2_p1k3h")
+hframes = 62
+frame = 32
