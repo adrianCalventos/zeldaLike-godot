@@ -1,65 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkwv7rak68ypm"]
+[gd_scene load_steps=3 format=3 uid="uid://bkwv7rak68ypm"]
 
-[ext_resource type="Texture2D" uid="uid://ctke6n7it6fw" path="res://World/Bush.png" id="1_6mds5"]
-[ext_resource type="Texture2D" uid="uid://llrpiolwgyty" path="res://Player/Player.png" id="2_p1k3h"]
-
-[sub_resource type="GDScript" id="GDScript_ndqgj"]
-script/source = "extends CharacterBody2D
-
-const ACCELERATION= 500;
-const MAX_SPEED= 80;
-const FRICTION = 500;
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass;
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-func _physics_process(delta):		
-	var input_vector = Vector2.ZERO;
-	input_vector.x = Input.get_action_strength(\"ui_right\") - Input.get_action_strength(\"ui_left\");
-	input_vector.y = Input.get_action_strength(\"ui_down\") - Input.get_action_strength(\"ui_up\");
-	input_vector = input_vector.normalized();
-	
-	if input_vector != Vector2.ZERO:
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta);
-		print(velocity)
-	else:
-		velocity= velocity.move_toward(Vector2.ZERO, FRICTION* delta);
-	
-	move_and_slide();
-		
-
-"
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0egpk"]
-radius = 4.0
-height = 12.0
+[ext_resource type="PackedScene" uid="uid://yqhtvqlvope0" path="res://World/Bush.tscn" id="2_sv8nu"]
+[ext_resource type="PackedScene" uid="uid://cl40gts62mb8" path="res://Player/Player.tscn" id="2_tf4to"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 
-[node name="Bush" type="Sprite2D" parent="."]
-position = Vector2(29, 36)
-texture = ExtResource("1_6mds5")
+[node name="Player" parent="." instance=ExtResource("2_tf4to")]
+position = Vector2(168, 72)
 
-[node name="Player" type="CharacterBody2D" parent="."]
-script = SubResource("GDScript_ndqgj")
-metadata/_edit_group_ = true
+[node name="Bush" parent="." instance=ExtResource("2_sv8nu")]
+position = Vector2(56, 80)
 
-[node name="PlayerSprite" type="Sprite2D" parent="Player"]
-position = Vector2(95, 71)
-texture = ExtResource("2_p1k3h")
-hframes = 62
+[node name="Bush2" parent="." instance=ExtResource("2_sv8nu")]
+position = Vector2(216, 160)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(96, 80)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_0egpk")
+[node name="Bush3" parent="." instance=ExtResource("2_sv8nu")]
+position = Vector2(272, 40)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 0, 64, 0, 40, 24, 32, 72, 24, 160, 88, 136, 136, 160, 176, 160, 216, 144, 248, 128, 288, 160, 308.533, 77.8682, 320, 32, 320, 192, 0, 192)
+[node name="Bush4" parent="." instance=ExtResource("2_sv8nu")]
+position = Vector2(72, 32)
