@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkwv7rak68ypm"]
 
 [ext_resource type="PackedScene" uid="uid://yqhtvqlvope0" path="res://World/Bush.tscn" id="2_sv8nu"]
-[ext_resource type="PackedScene" uid="uid://cl40gts62mb8" path="res://Player/Player.tscn" id="2_tf4to"]
+[ext_resource type="PackedScene" uid="uid://d3y3ekgenucdg" path="res://Player/Player.tscn" id="2_tf4to"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
