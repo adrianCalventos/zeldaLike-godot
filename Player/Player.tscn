@@ -1,6 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://d3y3ekgenucdg"]
+[gd_scene load_steps=41 format=3 uid="uid://d3y3ekgenucdg"]
 
 [ext_resource type="Texture2D" uid="uid://llrpiolwgyty" path="res://Player/Player.png" id="1_kn4a7"]
+[ext_resource type="PackedScene" uid="uid://dhloj4wei2fis" path="res://Hitboxes and hurtboxes/Hitbox.tscn" id="2_ipueq"]
 
 [sub_resource type="GDScript" id="GDScript_ndqgj"]
 script/source = "extends CharacterBody2D
@@ -19,10 +20,10 @@ enum {
 	ATTACK
 }
 var state = MOVE;
-func _process(delta):
+func _ready():
 	animationTree.active=true;
 	
-func _physics_process(delta):	
+func _process(delta):	
 	match state:
 		MOVE:
 			move_state(delta);
@@ -437,14 +438,18 @@ states/Run/position = Vector2(499, 76)
 states/Start/position = Vector2(207, 76)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4ot6p"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_mt7qt"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_m8wg1"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_n8um4"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_owh4k")]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_scnbg"]
+radius = 7.0
+height = 22.0
+
 [node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_ndqgj")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-position = Vector2(2.08165e-12, 2.08165e-12)
+position = Vector2(2.08165e-12, -8)
 texture = ExtResource("1_kn4a7")
 hframes = 60
-frame = 31
+frame = 36
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -461,3 +466,10 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/blend_position = Vector2(-0.000954211, 0.00217867)
 parameters/Idle/blend_position = Vector2(-0.00329596, 0)
 parameters/Run/blend_position = Vector2(-0.00197756, 0)
+
+[node name="Hitbox" parent="." instance=ExtResource("2_ipueq")]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CapsuleShape2D_scnbg")
+
+[editable path="Hitbox"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://bkwv7rak68ypm"]
+[gd_scene load_steps=27 format=3 uid="uid://bkwv7rak68ypm"]
 
 [ext_resource type="Texture2D" uid="uid://dqkt3mmwn8aiu" path="res://World/CliffTileset.png" id="2_hwkoq"]
 [ext_resource type="PackedScene" uid="uid://yqhtvqlvope0" path="res://World/Bush.tscn" id="2_sv8nu"]
 [ext_resource type="PackedScene" uid="uid://d3y3ekgenucdg" path="res://Player/Player.tscn" id="2_tf4to"]
 [ext_resource type="Texture2D" uid="uid://7fxpfkq3o6a7" path="res://World/GrassBackground.png" id="3_8suvx"]
 [ext_resource type="Texture2D" uid="uid://cyk3i7nbq1him" path="res://World/DirtTileset.png" id="4_cvyen"]
+[ext_resource type="PackedScene" uid="uid://bwjlajsjmtrbn" path="res://World/Grass.tscn" id="6_iovm6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxgyj"]
 texture = ExtResource("4_cvyen")
@@ -391,6 +392,7 @@ polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 texture = ExtResource("2_hwkoq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/z_index = 1
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_df1my")
@@ -401,6 +403,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/terrains_peering_bit/bottom_right_corner = 0
 0:0/0/terrains_peering_bit/bottom_side = 0
 1:0/0 = 0
+1:0/0/z_index = 1
 1:0/0/terrain_set = 0
 1:0/0/terrain = 0
 1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_04tsx")
@@ -413,6 +416,7 @@ texture_region_size = Vector2i(32, 32)
 1:0/0/terrains_peering_bit/bottom_left_corner = 0
 1:0/0/terrains_peering_bit/left_side = 0
 2:0/0 = 0
+2:0/0/z_index = 1
 2:0/0/terrain_set = 0
 2:0/0/terrain = 0
 2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_pni20")
@@ -423,6 +427,7 @@ texture_region_size = Vector2i(32, 32)
 2:0/0/terrains_peering_bit/bottom_left_corner = 0
 2:0/0/terrains_peering_bit/left_side = 0
 3:0/0 = 0
+3:0/0/z_index = 1
 3:0/0/terrain_set = 0
 3:0/0/terrain = 0
 3:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_uq6gv")
@@ -431,6 +436,7 @@ texture_region_size = Vector2i(32, 32)
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:0/0/terrains_peering_bit/bottom_side = 0
 4:0/0 = 0
+4:0/0/z_index = 1
 4:0/0/terrain_set = 0
 4:0/0/terrain = 0
 4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_yiijr")
@@ -440,6 +446,7 @@ texture_region_size = Vector2i(32, 32)
 4:0/0/terrains_peering_bit/right_side = 0
 4:0/0/terrains_peering_bit/bottom_side = 0
 5:0/0 = 0
+5:0/0/z_index = 1
 5:0/0/terrain_set = 0
 5:0/0/terrain = 0
 5:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8253u")
@@ -451,6 +458,7 @@ texture_region_size = Vector2i(32, 32)
 5:0/0/terrains_peering_bit/bottom_left_corner = 0
 5:0/0/terrains_peering_bit/left_side = 0
 6:0/0 = 0
+6:0/0/z_index = 1
 6:0/0/terrain_set = 0
 6:0/0/terrain = 0
 6:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8253u")
@@ -462,6 +470,7 @@ texture_region_size = Vector2i(32, 32)
 6:0/0/terrains_peering_bit/bottom_side = 0
 6:0/0/terrains_peering_bit/left_side = 0
 7:0/0 = 0
+7:0/0/z_index = 1
 7:0/0/terrain_set = 0
 7:0/0/terrain = 0
 7:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8253u")
@@ -471,6 +480,7 @@ texture_region_size = Vector2i(32, 32)
 7:0/0/terrains_peering_bit/bottom_side = 0
 7:0/0/terrains_peering_bit/left_side = 0
 8:0/0 = 0
+8:0/0/z_index = 1
 8:0/0/terrain_set = 0
 8:0/0/terrain = 0
 8:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8253u")
@@ -890,6 +900,19 @@ texture_region_size = Vector2i(32, 32)
 8:4/0/terrains_peering_bit/bottom_side = 0
 8:4/0/terrains_peering_bit/left_side = 0
 8:4/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
 
 [sub_resource type="TileSet" id="TileSet_tj3h3"]
 tile_size = Vector2i(32, 32)
@@ -907,7 +930,7 @@ y_sort_enabled = true
 [node name="DirtPathTilemap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_554o0")
 format = 2
-layer_0/tile_data = PackedInt32Array(655373, 196610, 3, 196624, 2, 3, 196625, 131074, 3, 327683, 196610, 3, 131076, 196610, 3, 720896, 2, 3, 589825, 2, 3, 589826, 196610, 2, 524290, 262146, 0, 524291, 196610, 2, 458755, 262146, 0, 458756, 65538, 3, 458757, 196610, 2, 393221, 196610, 0, 327686, 2, 3, 327687, 393218, 3, 262151, 2, 0, 262152, 589826, 1, 196616, 2, 1, 131080, 2, 1, 65544, 2, 0, 65545, 589826, 1, 9, 2, 0, 10, 327682, 0, 131081, 131074, 1, 65546, 458754, 3, 11, 131074, 3, 196617, 131074, 1, 262153, 458754, 3, 327688, 131074, 2, 720897, 131074, 3, 393229, 2, 0, 393230, 65538, 0, 393231, 65538, 0, 393232, 65538, 0, 393233, 131074, 0, 458765, 2, 2, 458766, 65538, 2, 458767, 65538, 2, 458768, 65538, 2, 458769, 131074, 2, 720913, 2, 3, 720914, 131074, 3, 720915, 196610, 3)
+layer_0/tile_data = PackedInt32Array(655373, 196610, 3, 196624, 2, 0, 196625, 131074, 0, 327683, 65538, 2, 131076, 196610, 3, 720896, 2, 3, 327686, 65538, 2, 327687, 65538, 2, 262151, 65538, 0, 262152, 393218, 2, 196616, 2, 1, 131080, 2, 1, 65544, 2, 0, 65545, 589826, 1, 9, 2, 0, 10, 327682, 0, 131081, 131074, 1, 65546, 458754, 3, 11, 131074, 3, 196617, 131074, 1, 262153, 327682, 2, 327688, 65538, 2, 720897, 131074, 3, 393229, 458754, 3, 720913, 2, 3, 720914, 131074, 3, 720915, 196610, 3, 262144, 2, 0, 327680, 2, 2, 327681, 65538, 2, 327682, 65538, 2, 327684, 65538, 2, 327685, 65538, 2, 262150, 65538, 0, 262149, 65538, 0, 262148, 65538, 0, 262145, 65538, 0, 262146, 65538, 0, 262147, 65538, 0, 327689, 65538, 2, 327690, 65538, 2, 327691, 393218, 1, 327692, 65538, 1, 262154, 65538, 0, 262155, 65538, 0, 393227, 2, 1, 458762, 2, 0, 524298, 589826, 1, 589833, 589826, 1, 589832, 2, 0, 524297, 262146, 2, 327693, 327682, 1, 327694, 65538, 2, 327695, 65538, 2, 327696, 65538, 2, 262160, 393218, 2, 262161, 131074, 1, 327697, 458754, 3, 393228, 327682, 1, 262156, 65538, 0, 262157, 65538, 0, 262158, 65538, 0, 262159, 65538, 0, 458763, 589826, 1, 589834, 458754, 3, 655369, 131074, 1, 655368, 2, 1, 720904, 2, 2, 720905, 131074, 2, 524299, 458754, 3, 458764, 131074, 2)
 
 [node name="DirtCliffTilemap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tj3h3")
@@ -917,18 +940,6 @@ layer_0/tile_data = PackedInt32Array(0, 2, 2, 1, 65538, 2, -65536, 2, 0, -65535,
 [node name="Player" parent="." instance=ExtResource("2_tf4to")]
 position = Vector2(168, 72)
 
-[node name="Bush" parent="." instance=ExtResource("2_sv8nu")]
-position = Vector2(56, 80)
-
-[node name="Bush2" parent="." instance=ExtResource("2_sv8nu")]
-position = Vector2(216, 160)
-
-[node name="Bush3" parent="." instance=ExtResource("2_sv8nu")]
-position = Vector2(272, 40)
-
-[node name="Bush4" parent="." instance=ExtResource("2_sv8nu")]
-position = Vector2(72, 32)
-
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
 texture_repeat = 2
@@ -937,3 +948,62 @@ texture = ExtResource("3_8suvx")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 180)
 metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Bush2" parent="Node2D" instance=ExtResource("2_sv8nu")]
+position = Vector2(216, 160)
+
+[node name="Bush3" parent="Node2D" instance=ExtResource("2_sv8nu")]
+position = Vector2(272, 40)
+
+[node name="Bush4" parent="Node2D" instance=ExtResource("2_sv8nu")]
+position = Vector2(72, 32)
+
+[node name="Bush" parent="Node2D" instance=ExtResource("2_sv8nu")]
+position = Vector2(56, 80)
+
+[node name="Grass" type="Node2D" parent="Node2D"]
+
+[node name="Grass2" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(136, 104)
+
+[node name="Grass8" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(136, 120)
+
+[node name="Grass9" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(136, 136)
+
+[node name="Grass10" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(184, 24)
+
+[node name="Grass11" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(168, 40)
+
+[node name="Grass14" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(168, 56)
+
+[node name="Grass15" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(184, 56)
+
+[node name="Grass12" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(184, 40)
+
+[node name="Grass13" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(184, 40)
+
+[node name="Grass3" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(152, 104)
+
+[node name="Grass4" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(152, 120)
+
+[node name="Grass5" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(168, 104)
+
+[node name="Grass6" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(40, 56)
+
+[node name="Grass7" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
+position = Vector2(24, 56)
