@@ -550,13 +550,14 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
+collision_layer = 2
 script = SubResource("GDScript_ndqgj")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, -8)
 texture = ExtResource("1_kn4a7")
 hframes = 60
-frame = 27
+frame = 39
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -576,10 +577,13 @@ parameters/Run/blend_position = Vector2(-0.00197756, 0)
 
 [node name="HitboxPivot" type="Marker2D" parent="."]
 position = Vector2(0, -4)
+rotation = 1.5708
 gizmo_extents = 8.0
 
 [node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource("2_ipueq")]
 position = Vector2(15, 2.08165e-12)
+collision_layer = 16
+collision_mask = 8
 
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
 rotation = 3.14159
