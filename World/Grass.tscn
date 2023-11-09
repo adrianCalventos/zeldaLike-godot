@@ -17,7 +17,6 @@ centered = false
 offset = Vector2(-8, -8)
 
 [node name="HurtBox" parent="." instance=ExtResource("3_150nh")]
-collision_layer = 8
 collision_mask = 16
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
