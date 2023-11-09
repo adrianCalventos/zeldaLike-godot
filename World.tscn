@@ -938,7 +938,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(0, 2, 2, 1, 65538, 2, -65536, 2, 0, -65535, 65538, 0, -65534, 65538, 0, -65533, 131074, 0, 3, 131074, 2, 2, 65538, 2, -65530, 2, 0, 6, 2, 2, 7, 65538, 2, 8, 65538, 2, 9, 131074, 2, -65527, 131074, 0, -65528, 65538, 0, -65529, 65538, 0, 327680, 2, 3, 327681, 65538, 3, 327682, 393218, 3, 327683, 131074, 2, 262147, 458754, 2, 262146, 2, 0, 196611, 196610, 0, 131081, 196610, 0, 196617, 196610, 1, 262153, 458754, 2, 262152, 2, 0, 327688, 2, 2, 327689, 131074, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_tf4to")]
-position = Vector2(168, 72)
+position = Vector2(168, 90)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
@@ -991,7 +991,7 @@ position = Vector2(184, 56)
 position = Vector2(184, 40)
 
 [node name="Grass13" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
-position = Vector2(184, 40)
+position = Vector2(200, 40)
 
 [node name="Grass3" parent="Node2D/Grass" instance=ExtResource("6_iovm6")]
 position = Vector2(152, 104)
