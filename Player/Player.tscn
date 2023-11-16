@@ -1,19 +1,22 @@
-[gd_scene load_steps=52 format=3 uid="uid://d3y3ekgenucdg"]
+[gd_scene load_steps=53 format=3 uid="uid://d3y3ekgenucdg"]
 
 [ext_resource type="Texture2D" uid="uid://llrpiolwgyty" path="res://Player/Player.png" id="1_kn4a7"]
 [ext_resource type="PackedScene" uid="uid://dhloj4wei2fis" path="res://Hitboxes and hurtboxes/Hitbox.tscn" id="2_ipueq"]
+[ext_resource type="Script" path="res://Player/SwordHitbox.gd" id="3_d1h1e"]
 
 [sub_resource type="GDScript" id="GDScript_ndqgj"]
 script/source = "extends CharacterBody2D
 
-const ACCELERATION= 500;
-const MAX_SPEED= 80;
-const FRICTION = 500;
-const ROLL_SPEED = 125;
+@export var ACCELERATION : int= 500;
+@export var MAX_SPEED: int= 80;
+@export var FRICTION: int = 500;
+@export var ROLL_SPEED : int= 125;
+
 
 @onready var animationPlayer = $AnimationPlayer;
 @onready var animationTree = $AnimationTree;
 @onready var animationState = animationTree.get(\"parameters/playback\");
+@onready var swordHitbox = $HitboxPivot/SwordHitbox;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 enum {
 	MOVE,
@@ -25,6 +28,7 @@ var roll_vector = Vector2.LEFT;
 
 func _ready():
 	animationTree.active=true;
+	swordHitbox.knockback_vector = roll_vector
 	
 func _process(delta):	
 	match state:
@@ -44,6 +48,7 @@ func move_state(delta):
 	
 	if input_vector != Vector2.ZERO:
 		roll_vector= input_vector;
+		swordHitbox.knockback_vector = input_vector;
 		animationTree.set(\"parameters/Idle/blend_position\", input_vector);
 		animationTree.set(\"parameters/Run/blend_position\", input_vector);
 		animationTree.set(\"parameters/Attack/blend_position\", input_vector);
@@ -770,6 +775,7 @@ gizmo_extents = 8.0
 position = Vector2(15, 2.08165e-12)
 collision_layer = 16
 collision_mask = 8
+script = ExtResource("3_d1h1e")
 
 [node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
 rotation = 3.14159

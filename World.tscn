@@ -950,9 +950,6 @@ region_rect = Rect2(0, 0, 320, 180)
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Node2D" instance=ExtResource("2_tf4to")]
-position = Vector2(168, 90)
-
 [node name="Bush2" parent="Node2D" instance=ExtResource("2_sv8nu")]
 position = Vector2(216, 160)
 
@@ -1017,3 +1014,6 @@ position = Vector2(200, 136)
 
 [node name="Bat3" parent="Node2D" instance=ExtResource("7_umbsw")]
 position = Vector2(224, 72)
+
+[node name="Player" parent="Node2D" instance=ExtResource("2_tf4to")]
+position = Vector2(24, 88)
