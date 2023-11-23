@@ -8,9 +8,10 @@ func _physics_process(delta):
 
 
 func _on_hurt_box_area_entered(area):
-	stats.health-=1;
-	if (stats.health<=0):
-		queue_free();
-	var knockback_vector = area.knockback_vector;
-	velocity =  knockback_vector * 120;
+	stats.health-=area.damage;
+	velocity =  area.knockback_vector * 120;
 	##queue_free();
+
+
+func _on_stats_no_health():
+	queue_free();

@@ -86,8 +86,9 @@ position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_yb7gr")
 
 [node name="Stats" parent="." instance=ExtResource("5_jth12")]
-max_health = 4
+max_health = 3
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="noHealth" from="Stats" to="." method="_on_stats_no_health"]
 
 [editable path="HurtBox"]
